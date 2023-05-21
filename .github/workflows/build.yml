@@ -2,11 +2,11 @@ name: 'build'
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ rackpilot/rackpilot }}
+  IMAGE_NAME: ${{ github.repository }}
 
 on: ['push', 'pull_request']
 jobs:
-  source-build:
+  container:
     runs-on: ubuntu-latest
     permissions:
       contents: read
