@@ -1,4 +1,4 @@
-FROM mirror.gcr.io/library/node:18-alpine as api
+FROM mirror.gcr.io/library/node:18-alpine AS api
 
 WORKDIR /api
 
@@ -7,7 +7,7 @@ COPY ./api .
 RUN npm ci
 RUN npm run build
 
-FROM mirror.gcr.io/library/node:18-alpine as ui
+FROM mirror.gcr.io/library/node:18-alpine AS ui
 
 WORKDIR /ui
 
@@ -16,7 +16,7 @@ COPY ./ui .
 RUN npm ci
 RUN npm run build
 
-FROM mirror.gcr.io/library/node:18-alpine as package
+FROM mirror.gcr.io/library/node:18-alpine AS package
 
 WORKDIR /opt/rackpilot
 
